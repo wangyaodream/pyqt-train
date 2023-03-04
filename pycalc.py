@@ -1,6 +1,7 @@
 import sys
 
 
+from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import (
     QApplication,
     QMainWindow,
@@ -13,6 +14,7 @@ from PyQt6.QtWidgets import (
 
 
 WINDOW_SIZE = 235
+DISPLAY_HEIGHT = 35
 
 
 class PyCalcWindow(QMainWindow):
@@ -28,6 +30,12 @@ class PyCalcWindow(QMainWindow):
         self._createDisplay()
         self._createButtons()
 
+    def _createDisplay(self):
+        # display area is a line editor
+        self.display = QLineEdit()
+        self.display.setFixedHeight(DISPLAY_HEIGHT)
+        self.display.setAlignment()
+
 
 
 def main():
@@ -39,7 +47,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 
 
 
